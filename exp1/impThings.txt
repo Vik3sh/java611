@@ -1,0 +1,154 @@
+
+
+## 📘 Java Notes – Strings & Arrays
+
+### ✅ **Strings in Java**
+
+1. **Finding Length of a String**
+
+   * Use `.length()` method
+
+   ```java
+   String str = "hello";
+   for (int i = 0; i < str.length(); i++) {
+       System.out.println(str.charAt(i));
+   }
+   ```
+
+2. **Changing Case**
+
+   * Convert to lowercase: `str.toLowerCase();`
+   * Convert to uppercase: `str.toUpperCase();`
+
+3. **Accessing Characters**
+
+   * Use `charAt(index)` to access character at a specific index
+
+   ```java
+   char ch = str.charAt(2);  // returns 'l' for "hello"
+   ```
+
+4. **Substring Extraction**
+
+   * Use `substring(start)` or `substring(start, end)`
+
+   ```java
+   String s = "hello";
+   System.out.println(s.substring(1));     // ello
+   System.out.println(s.substring(1, 4));  // ell
+   ```
+
+5. **Splitting a String**
+
+   * Use `split(delimiter)` to split a string into parts
+
+   ```java
+   String sentence = "Java is fun";
+   String[] words = sentence.split(" ");
+   ```
+
+6. **Finding Index of Character or Substring**
+
+   * Use `indexOf(char/substring)`
+
+   ```java
+   str.indexOf('l');        // returns 2
+   str.indexOf("lo");       // returns 3
+   ```
+
+7. **Check if String Contains Another String**
+
+   * Use `contains(substring)`
+
+   ```java
+   str.contains("he");  // returns true
+   ```
+
+8. **Comparing Strings**
+
+   * `.equals(str2)` → checks for exact match
+   * `.equalsIgnoreCase(str2)` → ignores case
+   * `compareTo(str2)` → lexicographically compares strings
+
+9. **String Concatenation**
+
+   * Use `+` operator or `concat()` method
+
+   ```java
+   str1 + str2;
+   str1.concat(str2);
+   ```
+
+10. **Trimming White Spaces**
+
+    * Use `trim()` to remove leading and trailing spaces
+
+    ```java
+    String s = "  Java  ";
+    s.trim();  // returns "Java"
+    ```
+
+---
+
+### ✅ **Arrays in Java**
+
+1. **Declaring Arrays**
+
+   ```java
+   int[] arr = new int[5];       // 1D array
+   int[] arr2 = {1, 2, 3, 4};    // initialized
+
+   int[][] arr2D = new int[3][4];  // 2D array with 3 rows and 4 columns
+   ```
+
+2. **Accessing Elements**
+
+   ```java
+   arr[0] = 10;
+   int x = arr[2];
+
+   arr2D[1][2] = 5;
+   ```
+
+3. **Getting Array Length**
+
+   * Use `arr.length` for 1D array
+   * For 2D array:
+
+     ```java
+     arr2D.length         // number of rows
+     arr2D[0].length      // number of columns in row 0
+     ```
+
+4. **Iterating Arrays**
+
+   ```java
+   for (int i = 0; i < arr.length; i++) {
+       System.out.println(arr[i]);
+   }
+
+   for (int i = 0; i < arr2D.length; i++) {
+       for (int j = 0; j < arr2D[i].length; j++) {
+           System.out.print(arr2D[i][j] + " ");
+       }
+       System.out.println();
+   }
+   ```
+
+---
+
+### ✨ Bonus Tips
+
+* **String is Immutable** → any change returns a new string.
+* Use `StringBuilder` or `StringBuffer` for mutable strings when performing many modifications.
+* Arrays are fixed in size; use `ArrayList` for dynamic arrays:
+
+  ```java
+  ArrayList<Integer> list = new ArrayList<>();
+  list.add(10);
+  list.get(0);
+  ```
+
+---
+
+
