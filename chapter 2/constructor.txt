@@ -1,0 +1,106 @@
+a constructor is function of type class which is automatically invoked
+or called when we create the object of the class. It has a same name as 
+the class.
+there are three thypes of constructor in java
+1. normal constructor
+2. parameterized constructor
+3. copy constructor 
+[...existing code...]
+
+
+
+- Constructors do not have a return type (not even void).
+- If no constructor is defined, Java provides a default constructor.
+- Constructors can be overloaded (multiple constructors with different parameters).
+- A constructor can call another constructor in the same class using `this()`.
+- Constructors are mainly used to initialize objects.
+- The copy constructor is not built-in in Java, but can be implemented manually.
+
+
+ this is the type of constructor which does not contain any paremtres
+This is the type of constructor which does not contain any parameters and is a normal function.
+
+**Example:**
+```java
+class Student {
+    Student() {
+        System.out.println("Normal Constructor called");
+    }
+}
+
+Student s1 = new Student(); // Output: Normal Constructor called
+```
+
+
+
+This constructor contains the parameters which are used when we create the object of the class.
+
+**Example:**
+```java
+class Student {
+    int age;
+    String name;
+    Student(int a, String n) {
+        age = a;
+        name = n;
+    }
+}
+
+Student s2 = new Student(20, "Amit");
+```
+
+
+## parameterized constructor
+A copy constructor is used to create a new object as a copy of an existing object.
+Java does not provide a built-in copy constructor, but you can define one yourself.
+
+**Example:**
+```java
+class Student {
+    int age;
+    String name;
+    Student(Student s) {
+        age = s.age;
+        name = s.name;
+    }
+}
+
+Student s3 = new Student(s2); // s2 is an existing Student object
+```
+
+
+    create the object of the class
+- Constructors cannot be abstract, static, final, or synchronized.
+- You can use access modifiers (public, private, protected) 
+with constructors.
+- The main purpose of constructors is to initialize the object 
+state.
+
+## Copy constructor
+A copy constructor is used to create a new object as a copy of 
+an existing object. Java does not provide a built-in copy 
+constructor, but you can define one yourself.
+
+Example:
+
+class Student {
+    int age;
+    String name;
+    Student(Student s) {
+        age = s.age;
+        name = s.name;
+    }
+}
+
+Student s3 = new Student(s2); // s2 is an existing Student object
+
+
+
+###***Polymorphism***###
+    one name many forms(behaviours).
+
+it is devided into two sub parts
+    1. Compile Time 
+        function overloading and  operator overloading
+    2. run Time.
+        

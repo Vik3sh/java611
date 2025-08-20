@@ -1,0 +1,124 @@
+Perfect 👌 Here’s a clean **notes format** for everything we discussed about **interfaces in Java** — you can directly paste this into your notepad:
+
+---
+
+# Java Interfaces – Notes
+
+## 1. Basics
+
+* An **interface** is like a contract: it defines **methods** that a class must implement.
+* Used for **abstraction** and **multiple inheritance** in Java.
+* By default:
+
+  * Methods → `public abstract`
+  * Variables → `public static final` (constants)
+
+---
+
+## 2. Implementing an Interface
+
+```java
+interface Animal {
+    void sound();  // abstract method
+}
+
+class Dog implements Animal {
+    public void sound() {   // implementation in class
+        System.out.println("Dog barks!");
+    }
+}
+```
+
+---
+
+## 3. Multiple Inheritance with Interfaces
+
+```java
+interface Camera {
+    void takePhoto();
+}
+interface MusicPlayer {
+    void playMusic();
+}
+class Smartphone implements Camera, MusicPlayer {
+    public void takePhoto() { System.out.println("Taking photo"); }
+    public void playMusic() { System.out.println("Playing music"); }
+}
+```
+
+✅ A class can implement multiple interfaces.
+
+---
+
+## 4. Default Methods (Java 8+)
+
+* Allow methods with **body inside interface**.
+* Used to **add new functionality** without breaking existing code.
+
+```java
+interface Vehicle {
+    void start();
+    default void fuel() {
+        System.out.println("Vehicle needs fuel.");
+    }
+}
+```
+
+---
+
+## 5. Static Methods (Java 8+)
+
+* Belong to the **interface itself**, not objects.
+
+```java
+interface MathUtils {
+    static int square(int x) {
+        return x * x;
+    }
+}
+```
+
+Call: `MathUtils.square(5);`
+
+---
+
+## 6. Multiple Interfaces – Same Method
+
+### Case 1: Only declarations → one implementation is enough
+
+```java
+interface A { void show(); }
+interface B { void show(); }
+class MyClass implements A, B {
+    public void show() { System.out.println("Single implementation"); }
+}
+```
+
+### Case 2: Both have default methods → conflict
+
+```java
+interface A { default void show() { System.out.println("A"); } }
+interface B { default void show() { System.out.println("B"); } }
+
+class MyClass implements A, B {
+    @Override
+    public void show() {
+        // Must resolve conflict
+        A.super.show();  // choose A's
+        // or B.super.show();  // choose B's
+    }
+}
+```
+
+---
+
+## 7. Key Points
+
+* Interfaces provide **multiple inheritance of type**.
+* Use `default` to add new methods with body in an interface.
+* If two interfaces have the same default method → class must override it.
+* To call a specific interface’s default method → `InterfaceName.super.methodName();`
+
+---
+
+
