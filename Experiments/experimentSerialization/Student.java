@@ -1,4 +1,4 @@
-package Experiments.experiment5;
+package Experiments.experimentSerialization;
 
 import java.io.Serializable;
 import java.util.Scanner;
