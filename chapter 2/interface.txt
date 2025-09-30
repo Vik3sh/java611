@@ -1,12 +1,10 @@
-Perfect 👌 Here’s a clean **notes format** for everything we discussed about **interfaces in Java** — you can directly paste this into your notepad:
-
----
 
 # Java Interfaces – Notes
 
 ## 1. Basics
 
-* An **interface** is like a contract: it defines **methods** that a class must implement.
+* An **interface** is like a contract: it defines **methods** that 
+a class must implement.
 * Used for **abstraction** and **multiple inheritance** in Java.
 * By default:
 
