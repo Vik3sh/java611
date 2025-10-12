@@ -26,6 +26,7 @@ class LibraryManager {
                 default:
                     System.out.println("Invalid operation.");
             }
+            sc.close();
         }
     }
 }

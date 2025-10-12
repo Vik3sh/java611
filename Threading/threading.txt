@@ -1,0 +1,95 @@
+Threading is used to run multiple threads (tasks, function calls) at the same time.
+This is used to run multiple operations concurrently in the same process space. 
+This can be used to make your program faster by doing multiple things at once.
+gaming applications use this concept to make sure that the game is running smoothly while also handling user input and other tasks.
+the concept thread is defined as a separate flow of execution.
+This means that your program can do multiple things at once.
+Python has a built-in module called threading that allows you to create and manage threads. 
+To use the threading module, you need to import it first.
+import threading
+Once you have imported the threading module, you can create a new thread by creating an instance of the Thread class.
+You can pass a target function to the Thread class that will be executed when the thread is started
+def print_numbers():
+    for i in range(5):
+        print(i)
+
+thread = threading.Thread(target=print_numbers)
+To start the thread, you need to call the start() method on the thread object.
+thread.start()
+This will start the thread and execute the target function in a separate thread of execution.   
+You can also pass arguments to the target function by using the args parameter of the Thread class.
+def print_numbers(n):
+    for i in range(n):
+        print(i)    
+thread = threading.Thread(target=print_numbers, args=(5,))
+
+CONTEXT SWITICHING 
+Thread scheduling is done by the operating system, which means that the order in which threads are executed is not guaranteed.
+This means that if you have multiple threads running at the same time, they may not execute in the order you expect.
+in short context switching is the process of storing and restoring the state (context) of a thread so that execution can be resumed from the same point at a later time.
+This allows multiple threads to share a single CPU core, which can improve the overall performance of your
+what is booting : 
+Booting is the process of starting up a computer and loading the operating system into memory.
+When you turn on your computer, the BIOS (Basic Input/Output System) performs a power-on self-test (POST) to check that all the hardware components are working properly.
+
+
+
+in java thread is also used as an object
+first we need to import the thread class
+import java.lang.Thread;
+then we can create a new thread by creating an instance of the Thread class
+Thread t = new Thread();
+t.start();
+t.run();
+This is done by the operating system by rapidly switching between threads, giving the illusion that they are running simultaneously.
+there is a static thread method called currentThread() that returns a reference to 
+the currently executing thread object.
+static method means that you can call the method without creating an 
+instance of the class.
+thread.currentThread().getName();
+how we are able to call the getName() using cureentThread() because
+currentThread() returns a reference to the currently executing thread object, which is an instance of the Thread class.
+the object that does not have any name is called an anonymous object.
+This means that you can call the getName() method on the object returned by currentThread() without needing to create a separate variable to hold the reference to the thread object.
+This is useful when you want to quickly access the properties or methods of the currently executing thread without needing to create a separate variable.
+when we use this anonymous object 
+we cannot reuse it because it does not have a name.
+thread.currentThread().setName("MyThread");
+This will set the name of the currently executing thread to "MyThread".123
+
+
+
+how we create a threading program in java
+Threre are two ways to create a thread in java
+1. By extending the Thread class
+2. By implementing the Runnable interface
+Here we will see the first method of creating a thread by extending the Thread class.
+we need to create a class that extends the Thread class and override the run() method.
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
+    }
+}
+then we can create an instance of the MyThread class and call the start() method to start the thread.   
+MyThread t = new MyThread();
+t.start();
+t.run();
+This will start the thread and execute the run() method in a separate thread of execution.
+
+The second method of creating a thread is by implementing the Runnable interface.
+we need to create a class that implements the Runnable interface and override the run() method.
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            System.out.println(i);
+        }
+    }
+}
+then we can create an instance of the MyRunnable class and pass it to the Thread class constructor to create a new thread.
+MyRunnable r = new MyRunnable();
+Thread t = new Thread(r);
+t.start();
+t.run();
+what is the run method in java:
