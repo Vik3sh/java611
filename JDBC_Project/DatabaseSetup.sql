@@ -56,3 +56,4 @@ SHOW TABLES;
 SELECT * FROM Employee;
 SELECT * FROM Product;
 SELECT * FROM Student;
+

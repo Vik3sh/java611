@@ -51,3 +51,4 @@ Update connection details in each Java file:
 - URL: `jdbc:mysql://localhost:3306/jdbc_project`
 - Username: `root`
 - Password: `password` (change as needed)
+
